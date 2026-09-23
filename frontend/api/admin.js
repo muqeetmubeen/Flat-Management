@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getConfig } from './axios.config.js';
 
-const API = "http://localhost:4000/api"
+const API = "https://flat-managementbackend.vercel.app/"
 
 export const getPendingFlats = () => 
      axios.get(`${API}/admin/flats/pending`,getConfig())

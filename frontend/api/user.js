@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getConfig } from './axios.config.js';
 
-const API = "http://localhost:4000/api"
+const API = "https://flat-managementbackend.vercel.app/"
 // Flats
 export const createFlat = (flatData) => {
      axios.post(`${API}/flat/createFlat`,flatData,getConfig())
