@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getmyFlats } from '../../api/user.js';
-import Myflatlist from '../../Component/Myflatlist.jsx';
+import Myflatlist from '../../src/Component/MyFlatList.jsx';
+
 
 const MyFlatPage = () => {
   const [flats, setFlats] = useState([]);
