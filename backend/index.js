@@ -1,0 +1,35 @@
+import express from "express"
+import dotenv from "dotenv"
+import rootRouter from "./routes/index.js";
+import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const app = express();
+
+const PORT=4000;
+
+app.use(express.json())
+
+app.use(cors({
+    origin:"*",
+    methods:["GET","PUT","POST","DELETE"],
+    allowedHeaders:["Content-Type","auth-token"]
+}))
+
+app.use("/upload",express.static(path.join(__dirname,"upload")))
+
+app.get('/',(req,res)=>{
+    res.send("Backend is running")
+})
+
+app.use('/api',rootRouter)
+
+app.listen(PORT,()=>{
+    console.log(`Server ruuning on PORT ${PORT}`);
+    
+})
