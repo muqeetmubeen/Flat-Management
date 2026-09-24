@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
          
         try {
-          const res = await axios.post('https://flat-managementbackend.vercel.app/apiauth/login',{
+          const res = await axios.post('https://flat-managementbackend.vercel.app/api/auth/login',{
             email,password
           },{
             headers:{
